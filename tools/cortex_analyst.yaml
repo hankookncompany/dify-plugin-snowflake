@@ -1,0 +1,56 @@
+identity:
+  name: cortex_analyst
+  author: hankookncompany
+  label:
+    en_US: Cortex Analyst
+    zh_Hans: Cortex Analyst
+    pt_BR: Cortex Analyst
+description:
+  human:
+    en_US: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
+    zh_Hans: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
+    pt_BR: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
+  llm: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
+parameters:
+  - name: message
+    type: string
+    required: true
+    label:
+      en_US: Query message
+      zh_Hans: 查询语句
+      pt_BR: Query message
+    human_description:
+      en_US: The natural language query to send to the Cortex Analyst
+      zh_Hans: The natural language query to send to the Cortex Analyst
+      pt_BR: The natural language query to send to the Cortex Analyst
+    llm_description: The user's question or command in natural language
+    form: llm
+  - name: semantic_model
+    type: string
+    required: false
+    label:
+      en_US: Semantic model file path
+      zh_Hans: 语义模型文件
+      ko_KR: 시맨틱 모델 파일 경로
+    human_description:
+      en_US: Stage path to the semantic model YAML. Multiple models can be provided by separating with a comma (e.g. @my_stage/my_model.yaml,@my_stage/my_model2.yaml)
+      zh_Hans: 语义模型 YAML 文件的 Stage 路径 (如 @my_stage/my_model.yaml, @my_stage/my_model2.yaml)
+      ko_KR: 시맨틱 모델 YAML의 스테이지 경로 (e.g. @my_stage/my_model.yaml, @my_stage/my_model2.yaml)
+    llm_description: Stage path to the semantic model YAML. Multiple models can be provided by separating with a comma (e.g. @my_stage/my_model.yaml,@my_stage/my_model2.yaml)
+    form: form
+  - name: semantic_view
+    type: string
+    required: false
+    label:
+      en_US: Name of semantic view
+      zh_Hans: 语义视图名称
+      ko_KR: 시맨틱 뷰 이름
+    human_description:
+      en_US: Fully qualified name of the semantic view (e.g. my_db.my_schema.my_view)
+      zh_Hans: 语义视图的完全限定名称 (例如 my_db.my_schema.my_view)
+      ko_KR: 시맨틱 뷰의 완전한 이름 (e.g. my_db.my_schema.my_view)
+    llm_description: Fully qualified name of the semantic view (e.g. my_db.my_schema.my_view)
+    form: form
+extra:
+  python:
+    source: tools/cortex_analyst.py
