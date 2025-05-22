@@ -31,7 +31,7 @@ It handles both generation and execution of SQL statements, via Snowflake's Cort
 
     | **Field**   | **Description**                                                                 | **Required** |
     |-------------|----------------------------------------------------------------------------------|--------------|
-    | `account`   | Your Snowflake account identifier <br> (e.g. `AB123456` or `AB123456.us-east-1.privatelink`) | ✅           |
+    | `account`   | Your Snowflake account identifier (e.g. `AB123456` or `AB123456.us-east-1.privatelink`) | ✅           |
     | `user`      | Your Snowflake user ID                                                          | ✅           |
     | `password`  | Your Snowflake password                                                         | ✅           |
     | `pat`       | Programmatic access token                     | ❌           |
