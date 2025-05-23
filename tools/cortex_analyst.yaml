@@ -4,12 +4,12 @@ identity:
   label:
     en_US: Cortex Analyst
     zh_Hans: Cortex Analyst
-    pt_BR: Cortex Analyst
+    ko_KR: Cortex Analyst
 description:
   human:
     en_US: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
-    zh_Hans: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
-    pt_BR: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
+    zh_Hans: 使用 Snowflake Cortex Analyst 返回 SQL 查询或更清晰问题的建议
+    ko_KR: Snowflake Cortex Analyst를 사용하여 SQL 쿼리 또는 더 명확한 질문에 대한 제안을 반환하는 도구
   llm: A tool that uses the Snowflake Cortex Analyst to return SQL query or suggestions for clearer questions
 parameters:
   - name: message
@@ -18,11 +18,11 @@ parameters:
     label:
       en_US: Query message
       zh_Hans: 查询语句
-      pt_BR: Query message
+      ko_KR: 쿼리 메시지
     human_description:
       en_US: The natural language query to send to the Cortex Analyst
-      zh_Hans: The natural language query to send to the Cortex Analyst
-      pt_BR: The natural language query to send to the Cortex Analyst
+      zh_Hans: 发送到 Cortex Analyst 的自然语言查询
+      ko_KR: Cortex Analyst에 보낼 자연어 쿼리
     llm_description: The user's question or command in natural language
     form: llm
   - name: semantic_model

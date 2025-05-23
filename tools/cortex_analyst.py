@@ -81,3 +81,30 @@ class CortexAnalystTool(Tool):
         else:
             yield self.create_text_message("PAT authentication is required.")
 
+    def _parse_response(self, response: list[dict[str, Any]]) -> dict[str, Any]:
+        """
+        Parse the response from Cortex Analyst API
+        """
+        
+        res = {}
+
+        res['request_id'] = response[0].get("request_id", None)
+        res['metadata'] = response[0].get("response_metadata", None)
+        res['metadata']['semantic_model_selection'] = response[0].get("semantic_model_selection", None)
+
+        if not response[0].get("message"):
+            return res
+        
+        for content in response[0]["message"].get("content",[]):
+            if content.get("type") == "text":
+                res['text'] = content.get('text', '')
+            if content.get("type") == "sql":
+                res['sql'] = content.get('statement')
+                res['confidence'] = content.get('confidence')
+            if content.get('suggestion'):
+                res['suggestion'] = content.get('suggestions')
+
+        if response[0].get("warnings"):
+            res['warnings'] = response[0].get("warnings")
+
+        return res
