@@ -4,7 +4,7 @@
 **Version:** 0.0.1
 **Type:** tool
 
-**Github Repository**: https://github.com/hankookncompany/snowflake
+**Github Repository**: https://github.com/hankookncompany/dify-plugin-snowflake
 
 ### Overview
 
